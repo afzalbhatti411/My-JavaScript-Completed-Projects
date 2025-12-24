@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tip Calculator</title>
+    <style>
+        body{
+            background-color: rgb(180, 231, 233);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container{
+            background-color: aquamarine;
+            max-width: 500px;
+            padding: 25px;
+        margin: 100px auto;
+        border: 2px solid;
+        border-radius: 10px;
+        box-shadow: 0   0   100px;
+        }
+        h1 {
+            margin-top: 5px;
+            text-align: center;
+        }
+        input{
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid;
+            border-radius: 10px;
+            width: 100%;
+        }
+
+    button{
+        color: white;
+        background-color: cadetblue;
+        padding: 10px;
+        margin: 10px 0;
+        font-size: 20px;
+        width: 100%;
+        border: 1px solid;
+        border-radius: 10px;
+    }
+    input, button {
+        width: 100%;
+        box-sizing: border-box;
+
+    }
+    
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tip Calculator</h1>
+        <p>Please Enter the Bill Amount and Tip Percentage to calculate Total Bill </p>
+
+        <label for="bill"><strong> Bill Amount: </strong> </label>
+        <input type="number" id="bill">
+        <br>
+        <label for="tip"> <strong>Tip Percentage: </strong></label>
+        <input type="number" id="tip">
+        <br>
+        <button id="calculate">Calculate</button>
+        <br>
+        <label for="total"><strong>Total Bill:</strong></label>
+        <span id="total"></span>
+        <br>
+        <button id="reset">Reset</button>
+    </div>
+
+    <script>
+        // create variables to use in function
+        const billInput = document.getElementById('bill');
+        const tipInput = document.getElementById('tip');
+        const calculateBtn = document.getElementById('calculate');
+        const totalSpan = document.getElementById('total');
+
+        // create function for addEventListener
+
+        function calculateTotal(){
+            const billValue = billInput.value;
+            const tipValue = tipInput.value;
+            const totalValue = billValue * (1 + tipValue/100);
+            totalSpan.innerText = totalValue.toFixed(2);
+        }
+        // event listner for total bill
+        calculateBtn.addEventListener('click', calculateTotal);
+
+        // To Clear All Fields for next Calculations (optional)
+        const resetBtn = document.getElementById('reset');
+
+        function clearFields(){
+            billInput.value = "";
+            tipInput.value = "";
+            totalSpan.innerText = "";
+        };
+
+        // event listner to clear fields.
+
+        resetBtn.addEventListener('click', clearFields);
+
+
+    </script>
+    
+</body>
+</html>

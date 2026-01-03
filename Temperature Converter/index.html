@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: blanchedalmond;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: sans-serif;
+        }
+        .container {
+            background-color: cornflowerblue;
+            width: 90%;
+            max-width: 450px;
+            padding: 40px;
+            border: 2px solid #333;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);            
+        }
+        .heading {
+            text-align: center;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+        }
+        .temp-container {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        label {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+        .input {
+            width: 60%;
+            padding: 10px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="heading">Temp Converter</h1>
+
+        <div class="temp-container">
+            <label for="celcius">Celsius:</label>
+            <input oninput="computeTemp(event)" type="number" id="celcius" placeholder="Enter Temp" class="input">
+        </div>
+
+        <div class="temp-container">
+            <label for="farenheit">Fahrenheit:</label>
+            <input oninput="computeTemp(event)" type="number" id="farenheit" placeholder="Enter Temp" class="input">          
+        </div>
+
+        <div class="temp-container">
+            <label for="kelvin">Kelvin:</label>
+            <input oninput="computeTemp(event)" type="number" id="kelvin" placeholder="Enter Temp" class="input">          
+        </div>
+    </div>
+
+    <script>
+        const celciusE1 = document.getElementById('celcius');
+        const farenheitE1 = document.getElementById('farenheit');
+        const kelvinE1 = document.getElementById('kelvin');
+
+        function computeTemp(event) {
+            // The '+' converts the string value to a number
+            const currentValue = +event.target.value;
+
+            // Switch on the ID of the input that triggered the event
+            switch (event.target.id) {
+                case "celcius":
+                    farenheitE1.value = (currentValue * 1.8 + 32).toFixed(2);
+                    kelvinE1.value = (currentValue + 273.15).toFixed(2);
+                    break;
+                case "farenheit":
+                    celciusE1.value = ((currentValue - 32) / 1.8).toFixed(2);
+                    kelvinE1.value = ((currentValue - 32) / 1.8 + 273.15).toFixed(2);
+                    break;
+                case "kelvin":
+                    celciusE1.value = (currentValue - 273.15).toFixed(2);
+                    farenheitE1.value = ((currentValue - 273.15) * 1.8 + 32).toFixed(2);
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

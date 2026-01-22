@@ -1,0 +1,32 @@
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: lightpink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+        }
+        .container{
+            background-color: lightcoral;
+            width: 300px;
+            text-align: center;
+            font-size: 50px;
+            border: 2px solid;
+            border-radius: 20px;
+            padding: 20px;
+        }
+        button{
+            background-color: lightpink;
+            font-size: 20px;
+            padding: 5px;
+            border: 2px solid;
+            border-radius: 10px;
+        }
+        button:hover{
+            background-color: rgb(190, 6, 34);
+            color: white;
+        }

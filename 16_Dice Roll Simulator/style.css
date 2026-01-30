@@ -1,0 +1,37 @@
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            min-height: 100vh;
+            background-color: lightgoldenrodyellow;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .dice {
+            font-size: 100px;
+            margin: 20px 0;
+            transition: transform 0.2s ease-in-out;
+        }
+        button {
+            background-color: #ff6b6b;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #f4ab6b;
+        }
+        /* Animation class for a small "pop" effect */
+        .roll-animation {
+            transform: scale(1.2);
+        }

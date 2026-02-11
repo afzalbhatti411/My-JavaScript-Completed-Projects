@@ -1,0 +1,33 @@
+        body{
+            background-color: salmon;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container{
+            background-color: lightsalmon;
+            max-width: 90%;
+            width: 400px;
+            text-align: center;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0   4px 8px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+        .input{
+            background-color: bisque;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            width: 300px;
+            padding: 5px 10px;
+            margin-bottom: 20px;
+        }
+        #title{
+            font-size: 18px;
+        }
+        .meaning-container{
+             display: none;
+        }
